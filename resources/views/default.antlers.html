@@ -1,1 +1,17 @@
-{{ content }}
+<h1>{{ title }}</h1>
+
+{{ replicator_field }}
+
+  {{ if type == "content_bard" }}
+    <section class="bard-content">
+      {{ bard_field }}
+    </section>
+  {{ /if }}
+
+  {{ if type == "content_code" }}
+    <section class="code-content">
+      <pre><code>{{ code_field }}</code></pre>
+    </section>
+  {{ /if }}
+
+{{ /replicator_field }}

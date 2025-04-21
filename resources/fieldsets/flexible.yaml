@@ -1,0 +1,28 @@
+title: Flexible
+fields:
+  -
+    handle: replicator_field
+    field:
+      type: replicator
+      display: 'Replicator Field'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: bard_field
+                  field:
+                    remove_empty_nodes: false
+                    type: bard
+                    display: 'Bard Field'
+            set:
+              display: Set
+              fields:
+                -
+                  handle: code_field
+                  field:
+                    type: code
+                    display: 'Code Field'

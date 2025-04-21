@@ -1,0 +1,80 @@
+title: 'Flexible Content'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: replicator_field
+            field:
+              type: replicator
+              display: 'Replicator Field'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    content_bard:
+                      display: 'Content Bard'
+                      fields:
+                        -
+                          handle: bard_field
+                          field:
+                            remove_empty_nodes: false
+                            type: bard
+                            display: 'Bard Field'
+                    content_code:
+                      display: 'Content Code'
+                      fields:
+                        -
+                          handle: code_field
+                          field:
+                            type: code
+                            display: 'Code Field'
+          -
+            handle: template_field
+            field:
+              type: template
+              display: 'Template Field'
+          -
+            handle: taxonomy_terms_field
+            field:
+              type: terms
+              display: 'Taxonomy Terms Field'
+          -
+            handle: taxonomies_field
+            field:
+              type: taxonomies
+              display: 'Taxonomies Field'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+  new_tab:
+    display: 'New Tab'
+    sections:
+      -
+        display: 'New Section'
