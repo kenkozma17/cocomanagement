@@ -39,10 +39,10 @@ tabs:
                             type: code
                             display: 'Code Field'
           -
-            handle: template_field
+            handle: template
             field:
               type: template
-              display: 'Template Field'
+              display: Template
           -
             handle: taxonomy_terms_field
             field:

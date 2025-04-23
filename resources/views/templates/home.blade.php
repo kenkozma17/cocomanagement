@@ -1,3 +1,6 @@
+@extends('layouts.layout')
+
+@section('template_content')
 <a href="https://statamic.com">
     <svg id="statamic-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 272.1" width="240">
         <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="99.153" y1="65.596" x2="150.124" y2="205.639">
@@ -13,5 +16,6 @@
     </svg>
 </a>
 <article class="mt-4 bg-white dark:bg-gray-900 p-8 shadow-xl rounded-2xl max-w-xl prose prose-slate dark:prose-invert">
-    {{ content | widont }}
+    {!! $content !!}
 </article>
+@endsection
