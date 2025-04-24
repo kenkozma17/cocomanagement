@@ -10,8 +10,9 @@
 
     @vite(['resources/js/site.js', 'resources/css/site.css'])
 </head>
-<body class="bg-slate-100 dark:bg-gray-800 font-sans leading-normal text-slate-800 dark:text-gray-400">
-    <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+<body class="font-sans leading-normal">
+    @include('partials._navigation-bar')
+    <div class="mx-auto bg-slate-600 min-h-screen">
         @yield('template_content')
     </div>
 </body>

@@ -2,13 +2,9 @@
  * When extending the control panel, be sure to uncomment the necessary code for your build process:
  * https://statamic.dev/extending/control-panel
  */
+// import NavigationBar from './Components/Partials/NavigationBar.vue';
 
-/** Example Fieldtype
+// Statamic.booting(() => {
+//     Statamic.$components.register('navigation-bar', NavigationBar);
+// });
 
-import ExampleFieldtype from './components/fieldtypes/ExampleFieldtype.vue';
-
-Statamic.booting(() => {
-    Statamic.$components.register('example-fieldtype', ExampleFieldtype);
-});
-
-*/
