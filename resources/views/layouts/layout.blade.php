@@ -1,4 +1,3 @@
-@props(['context'])
 <!doctype html>
 <html lang="{{ $page->short_locale }}">
 <head>
@@ -11,9 +10,10 @@
     @vite(['resources/js/site.js', 'resources/css/site.css'])
 </head>
 <body class="font-sans leading-normal">
-    @include('partials._navigation-bar')
+    <x-navigation-bar :context="$__data" />
     <div class="mx-auto bg-slate-600 min-h-screen">
         @yield('template_content')
     </div>
+    <x-footer :context="$__data" />
 </body>
 </html>
