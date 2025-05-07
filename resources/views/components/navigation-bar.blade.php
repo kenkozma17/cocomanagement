@@ -1,7 +1,9 @@
 @props(['context'])
-<nav class="main-navigation flex justify-between items-center bg-white w-full md:py-[2rem] py-[1.5rem] md:px-[1.5rem] px-[1rem] max-w-7xl mx-auto">
+<nav class="main-navigation flex justify-between items-center bg-white w-full md:py-[2rem] py-[1.5rem] md:px-0 px-[1rem] max-w-7xl mx-auto">
     <!-- Company Logo -->
-    <img src="{{ $context['brand']->logo->manipulate(['w' => 80]) }}" alt="{{ $context['brand']->logo->alt }}">
+    <a href="/">
+        <img src="{{ $context['brand']->logo->manipulate(['w' => 80]) }}" alt="{{ $context['brand']->logo->alt }}">
+    </a>
 
     <!-- Navigation -->
     <ul class="gap-x-[2rem] xl:flex hidden">

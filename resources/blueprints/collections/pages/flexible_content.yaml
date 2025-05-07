@@ -73,8 +73,11 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
-  new_tab:
-    display: 'New Tab'
+  meta_seo:
+    display: Meta/SEO
     sections:
       -
-        display: 'New Section'
+        display: 'Meta Data'
+        fields:
+          -
+            import: meta_data

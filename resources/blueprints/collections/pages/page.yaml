@@ -1,6 +1,7 @@
 title: Page
 tabs:
   main:
+    display: Main
     sections:
       -
         fields:
@@ -9,6 +10,8 @@ tabs:
             field:
               type: text
               required: true
+              validate:
+                - required
           -
             handle: content
             field:
@@ -29,7 +32,16 @@ tabs:
               type: template
               display: Template
               localizable: true
+  meta_seo:
+    display: Meta/SEO
+    sections:
+      -
+        display: 'Meta Data'
+        fields:
+          -
+            import: meta_data
   sidebar:
+    display: Sidebar
     sections:
       -
         fields:
