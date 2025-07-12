@@ -1,7 +1,9 @@
 @extends('layouts.layout')
 
 @section('template_content')
-    {{ $title }}
+    <section class="bard-content mx-auto max-w-7xl">
+        {{ $title }}
+    </section>
 
     @if (isset($replicator_field))
         @foreach ($replicator_field as $set)

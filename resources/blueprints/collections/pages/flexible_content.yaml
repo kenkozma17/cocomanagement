@@ -1,3 +1,4 @@
+route: '/{parent_uri}/{slug}'
 title: 'Flexible Content'
 tabs:
   main:

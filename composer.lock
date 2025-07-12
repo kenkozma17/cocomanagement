@@ -4746,16 +4746,16 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v5.54.0",
+            "version": "v5.59.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "ac50ce121e2db82455f3cc9be381b432a51ad385"
+                "reference": "f38ad40d2c042de1be2b7dc8a497ae6c73ee2221"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/ac50ce121e2db82455f3cc9be381b432a51ad385",
-                "reference": "ac50ce121e2db82455f3cc9be381b432a51ad385",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/f38ad40d2c042de1be2b7dc8a497ae6c73ee2221",
+                "reference": "f38ad40d2c042de1be2b7dc8a497ae6c73ee2221",
                 "shasum": ""
             },
             "require": {
@@ -4840,7 +4840,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v5.54.0"
+                "source": "https://github.com/statamic/cms/tree/v5.59.0"
             },
             "funding": [
                 {
@@ -4848,7 +4848,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-02T19:32:08+00:00"
+            "time": "2025-07-10T20:46:03+00:00"
         },
         {
             "name": "statamic/eloquent-driver",
