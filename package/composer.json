@@ -1,0 +1,24 @@
+{
+    "name": "kenkozma17/coco-cms",
+    "extra": {
+        "statamic": {
+            "name": "Coco CMS",
+            "description": "A description of your starter kit"
+        },
+        "laravel": {
+            "providers": [
+                "Kenkozma17\\CocoCMS\\ServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Kenkozma17\\CocoCMS\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    }
+}

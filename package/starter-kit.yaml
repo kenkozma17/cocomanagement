@@ -1,0 +1,12 @@
+updatable: true
+export_paths:
+  - content
+  - app/Models/User.php
+  - config/auth.php
+  - config/filesystems.php
+  - config/statamic/users.php
+  - users
+  - config/statamic/assets.php
+  - resources
+  - package.json
+  - vite.config.js
