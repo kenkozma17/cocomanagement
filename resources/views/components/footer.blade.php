@@ -4,7 +4,11 @@
      <div class="flex md:flex-row flex-col md:justify-between justify-center items-center gap-[2rem]">
         <div>
             <a href="/">
-                <img class="md:mb-[1.5rem] mb-[1rem]" src="{{ $context['brand']->logo->manipulate(['w' => 80]) }}" alt="{{ $context['brand']->logo->alt }}">
+                @if (isset($context['brand']->logo))
+                    <img class="md:mb-[1.5rem] mb-[1rem]" src="{{ $context['brand']->logo->manipulate(['w' => 80]) }}" alt="{{ $context['brand']->logo->alt }}">
+                @else
+                    <span>Logo here</span>
+                @endif
             </a>
             <!-- Primary Links -->
             @if ($context['footer']->primary_links)

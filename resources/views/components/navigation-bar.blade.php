@@ -2,7 +2,11 @@
 <nav class="main-navigation flex justify-between items-center bg-white w-full md:py-[2rem] py-[1.5rem] md:px-0 px-[1rem] max-w-7xl mx-auto">
     <!-- Company Logo -->
     <a href="/">
-        <img src="{{ $context['brand']->logo->manipulate(['w' => 80]) }}" alt="{{ $context['brand']->logo->alt }}">
+        @if (isset($context['brand']->logo))
+            <img src="{{ $context['brand']->logo->manipulate(['w' => 80]) }}" alt="{{ $context['brand']->logo->alt }}">
+        @else
+            <span>Logo here</span>
+        @endif
     </a>
 
     <!-- Navigation -->
