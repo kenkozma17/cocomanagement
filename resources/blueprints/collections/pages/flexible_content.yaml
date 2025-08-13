@@ -1,4 +1,3 @@
-route: '/{parent_uri}/{slug}'
 title: 'Flexible Content'
 tabs:
   main:
@@ -19,8 +18,8 @@ tabs:
               type: replicator
               display: 'Replicator Field'
               sets:
-                new_set_group:
-                  display: 'New Set Group'
+                core:
+                  display: Core
                   sets:
                     content_bard:
                       display: 'Content Bard'
@@ -39,6 +38,16 @@ tabs:
                           field:
                             type: code
                             display: 'Code Field'
+                    banner:
+                      display: Banner
+                      fields:
+                        -
+                          handle: banner_image
+                          field:
+                            max_files: 1
+                            container: assets
+                            type: assets
+                            display: 'Banner Image'
           -
             handle: template
             field:

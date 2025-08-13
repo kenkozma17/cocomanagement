@@ -1,24 +1,48 @@
 @props(['context'])
-<nav class="main-navigation flex justify-between items-center bg-white w-full md:py-[2rem] py-[1.5rem] md:px-0 px-[1rem] max-w-7xl mx-auto">
-    <!-- Company Logo -->
-    <a href="/">
-        @if (isset($context['brand']->logo))
-            <img src="{{ $context['brand']->logo->manipulate(['w' => 80]) }}" alt="{{ $context['brand']->logo->alt }}">
-        @else
-            <span>Logo here</span>
-        @endif
-    </a>
+<section class="relative">
+    <div
+      class="bg-primary-red absolute top-full lg:w-[150vw] w-[180vw] xl:h-[600px] lg:h-[500px] h-[450px] md:left-[-15vw] left-[-50vw] transform rotate-[-15deg] 2xl:translate-y-[-500px] lg:translate-y-[-350px] translate-y-[-300px]"
+    ></div>
+    <nav class="bg-[#FBFAF5] md:py-[1.5rem] py-[1.25rem] z-50 fixed top-0 left-0 right-0 shadow-lg">
+        <x-layout.wrapper class="flex justify-between items-center">
+            <!-- Company Logo -->
+            <a href="/">
+                @if (isset($context['brand']->logo))
+                    @php $logo = $context['brand']->logo @endphp
+                    @if ($logo->extension() === 'svg')
+                        @php $svg = file_get_contents($logo->resolvedPath()); @endphp
+                        {!! $svg !!}
+                    @else
+                        <img src="{{ $logo->manipulate(['w' => 225]) }}" alt="{{ $logo->alt }}">
+                    @endif
+                @else
+                    <span>Logo here</span>
+                @endif
+            </a>
 
-    <!-- Navigation -->
-    <ul class="gap-x-[2rem] xl:flex hidden">
-        <statamic:nav:header>
-            <li>
-                <a class="cursor-pointer" href="{{ $url }}">{{ $title }}</a>
-            </li>
-        </statamic:nav:header>
-    </ul>
+            <!-- Navigation -->
+            <ul class="gap-x-[2rem] xl:flex hidden">
+                <statamic:nav:header>
+                    <li>
+                        @if(isset($icon))
+                            <a href="{{ $url }}">
+                                <img src="{{ $icon }}" alt="">
+                            </a>
+                        @else
+                            <a
+                            class="font-bold text-sm text-primary-gray hover:text-primary-red cursor-pointer
+                            {{ isset($is_cta_button) && $is_cta_button->value() ? 'border-2 border-primary-gray md:px-[1.25rem] md:py-[.45rem] text-primary-gray hover:text-primary-red' : '' }}"
+                            href="{{ $url }}">
+                            {{ $title }}
+                            </a>
+                        @endif
+                    </li>
+                </statamic:nav:header>
+            </ul>
 
-    <!-- Hamburger Menu -->
-    @include('partials._hamburger-menu')
-</nav>
+            <!-- Hamburger Menu -->
+            @include('partials._hamburger-menu')
+        </x-layout.wrapper>
+    </nav>
+</section>
 @include('partials._side-navigation')

@@ -25,6 +25,12 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;600;700&display=swap" rel="stylesheet">
+
+
     <!-- Json LD -->
     <script type="application/ld+json">
         {
@@ -45,7 +51,7 @@
 </head>
 <body class="font-sans leading-normal">
     <x-navigation-bar :context="$__data" />
-    <div class="mx-auto bg-[#e2e0e0] min-h-screen">
+    <div class="relative md:mt-[10rem] mt-[5rem]">
         @yield('template_content')
     </div>
     <x-footer :context="$__data" />

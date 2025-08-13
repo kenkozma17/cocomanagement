@@ -2,3 +2,12 @@
 @plugin "@tailwindcss/typography";
 @source "../views";
 @source "../../content";
+
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+@theme {
+    --color-primary-red: #7E1416;
+    --color-primary-gray: #323231;
+}
