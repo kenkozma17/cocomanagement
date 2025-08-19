@@ -12,6 +12,12 @@
                     @include('components.flex.banner')
                 </x-layout.wrapper>
             @endif
+
+            @if ($set['type'] === 'upcoming_events')
+                <x-layout.wrapper>
+                    @include('components.flex.upcoming-events')
+                </x-layout.wrapper>
+            @endif
         @endforeach
     @endif
 @endsection

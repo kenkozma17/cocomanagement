@@ -3,9 +3,21 @@
 @source "../views";
 @source "../../content";
 
-body {
-    font-family: 'DM Sans', sans-serif;
+@layer base {
+    body, html {
+      @apply text-[16px] w-full overflow-x-hidden;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    h1 {
+        @apply md:text-[3.125rem] text-[1.85rem] font-bold;
+    }
+
+    h2 {
+      @apply md:text-[3.125rem] font-bold text-[1.75rem];
+    }
 }
+
 
 @theme {
     --color-primary-red: #7E1416;
