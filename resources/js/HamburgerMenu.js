@@ -9,8 +9,14 @@ const HamburgerMenu = () => {
     const mobileNavigationCloseBtn = document.querySelector('.mobile-navigation-close');
     const isMenuOpen = false;
 
-    hamburgerBtn.addEventListener('click', () => mobileNavigation.classList.toggle('hidden'));
-    mobileNavigationCloseBtn.addEventListener('click', () => mobileNavigation.classList.add('hidden'));
+    const toggleMenu = () => {
+        mobileNavigation.classList.toggle('hidden');
+        document.querySelector('html').classList.toggle('overflow-hidden');
+    };
+
+    hamburgerBtn.addEventListener('click', () => toggleMenu());
+    mobileNavigationCloseBtn.addEventListener('click', () => toggleMenu());
+
 }
 
 export default HamburgerMenu;

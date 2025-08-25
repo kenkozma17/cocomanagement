@@ -1,5 +1,6 @@
-@props(['event'])
+@props(['event', 'slug' => 'event'])
 @php
+    $eventDate = null;
     if($event->start_date) {
         $startDate = $event->start_date;
         $endDate = $event->end_date;
@@ -37,7 +38,7 @@
       @endif
       <p class="font-bold mt-auto">Learn More</p>
       <a
-        href="events/{{ $event->slug }}"
+        href="{{$slug}}/{{ $event->slug }}"
         class="absolute top-0 right-0 left-0 bottom-0"
       ></a>
     </div>

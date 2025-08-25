@@ -1,44 +1,28 @@
 @props(['context'])
-<footer class="max-w-7xl mx-auto bg-white w-full md:py-[2rem] py-[1.5rem] md:px-0 px-[1rem]">
-    <!-- Company Logo -->
-     <div class="flex md:flex-row flex-col md:justify-between justify-center items-center gap-[2rem]">
-        <div>
-            <a href="/">
-                @if (isset($context['brand']->logo))
-                    <img class="md:mb-[1.5rem] mb-[1rem]" src="{{ $context['brand']->logo->manipulate(['w' => 80]) }}" alt="{{ $context['brand']->logo->alt }}">
-                @else
-                    <span>Logo here</span>
-                @endif
-            </a>
-            <!-- Primary Links -->
-            @if ($context['footer']->primary_links)
-                <div class="flex flex-col gap-[.25rem]">
-                    @foreach ($context['footer']->primary_links as $link)
-                        <ul>
-                            <li>
-                                <a href="{{ $link['url'] }}">
-                                    {{ $link['text'] }}
-                                </a>
-                            </li>
-                        </ul>
-                    @endforeach
-                </div>
-            @endif
-        </div>
-
-        <!-- Footer Links -->
-         @if ($context['footer']->footer_sections)
-            <div class="flex md:flex-row flex-col gap-[2rem]">
-                @foreach ($context['footer']->footer_sections as $sectionGroup)
+<footer class="bg-primary-red border-t border-black w-full md:py-[4rem] py-[2rem]">
+    <x-layout.wrapper>
+        <div class="grid grid-cols-12 md:gap-[1rem] md:gap-[2.5rem] gap-y-[2.5rem] py-[2.5rem] justify-center">
+            <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                <p class="text-white text-[1.5rem] font-bold">{{ $context['footer']->title }}</p>
+                <p class="text-white my-[1rem] break-words">{{ $context['company']->address }}</p>
+                <p>
+                    <img
+                    src="{{ $context['brand']->logo_white->manipulate(['w' => 225]) }}"
+                    alt="footer.logo.alternativeText"
+                    />
+                </p>
+            </div>
+            @foreach ($context['footer']->footer_sections as $sectionGroup)
+                <div class="lg:col-span-3 md:col-span-6 col-span-12">
                     @if ($sectionGroup['type'] === 'footer_section')
                         <div>
-                            <p class="md:mb-[.75rem] mb-[.5rem] font-bold text-lg">{{ $sectionGroup['title'] }}</p>
+                            <p class="text-white md:mb-[.75rem] mb-[.5rem] font-bold text-lg">{{ $sectionGroup['title'] }}</p>
                             @if (!empty($sectionGroup['links']))
                                 <ul>
                                     @foreach ($sectionGroup['links'] as $linkGroup)
                                         @if ($linkGroup['type'] === 'link')
-                                            <li>
-                                                <a href="{{ $linkGroup['url'] }}">
+                                            <li class="mb-[.5rem]">
+                                                <a class="text-white" href="{{ $linkGroup['url'] }}">
                                                     {{ $linkGroup['link_text'] }}
                                                 </a>
                                             </li>
@@ -48,8 +32,8 @@
                             @endif
                         </div>
                     @endif
-                @endforeach
-            </div>
-        @endif
-    </div>
+                </div>
+            @endforeach
+        </div>
+    </x-layout.wrapper>
 </footer>

@@ -51,7 +51,7 @@
 </head>
 <body class="font-sans leading-normal">
     <x-navigation-bar :context="$__data" />
-    <div class="relative md:mt-[10rem] mt-[5rem]">
+    <div class="relative md:mt-[10rem] mt-[8rem]">
         @yield('template_content')
     </div>
     <x-footer :context="$__data" />

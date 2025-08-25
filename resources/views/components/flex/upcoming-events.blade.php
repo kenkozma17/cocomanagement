@@ -1,8 +1,3 @@
-@php
-$entries = \Statamic\Facades\Collection::findByHandle('events')->queryEntries();
-$entries = $entries->limit(3)->get();
-@endphp
-
 <section>
     <h2
       class="text-white inline-block bg-primary-red px-[1rem] border-l-[5px] border-b-[5px] border-black py-[.25rem]"
@@ -13,12 +8,14 @@ $entries = $entries->limit(3)->get();
     <div
       class="grid grid-cols-12 md:gap-[1.875rem] gap-[1.25rem] md:mt-[1.825rem] mt-[1rem] md:mb-[1.8rem] mb-[1.25rem]"
     >
-        @foreach ($entries as $event)
-            <x-ui.event-card
-                class="lg:col-span-4 md:col-span-6 col-span-12"
-                :event="$event"
-            />
-        @endforeach
+        <statamic:collection:events as="events" limit="3">
+            @foreach($events as $event)
+                <x-ui.event-card
+                    class="lg:col-span-4 md:col-span-6 col-span-12"
+                    :event="$event"
+                />
+            @endforeach
+        </statamic:collection>
     </div>
 
     <button

@@ -1,5 +1,5 @@
 @props(['context'])
-<section class="relative">
+<section class="relative main-navigation">
     <div
       class="bg-primary-red absolute top-full lg:w-[150vw] w-[180vw] xl:h-[600px] lg:h-[500px] h-[450px] md:left-[-15vw] left-[-50vw] transform rotate-[-15deg] 2xl:translate-y-[-500px] lg:translate-y-[-350px] translate-y-[-300px]"
     ></div>
@@ -25,11 +25,11 @@
                 <statamic:nav:header>
                     <li>
                         @if(isset($icon))
-                            <a href="{{ $url }}">
-                                <img src="{{ $icon }}" alt="">
+                            <a target="{{ isset($open_in_new_tab) && $open_in_new_tab ? '_blank' : '_self' }}" href="{{ $url }}">
+                                <img src="{{ $icon }}" alt="{{ $icon->alt }}">
                             </a>
                         @else
-                            <a
+                            <a target="{{ isset($open_in_new_tab) && $open_in_new_tab ? '_blank' : '_self' }}"
                             class="font-bold text-sm text-primary-gray hover:text-primary-red cursor-pointer
                             {{ isset($is_cta_button) && $is_cta_button->value() ? 'border-2 border-primary-gray md:px-[1.25rem] md:py-[.45rem] text-primary-gray hover:text-primary-red' : '' }}"
                             href="{{ $url }}">

@@ -1,3 +1,6 @@
 import HamburgerMenu from "./HamburgerMenu";
 
-HamburgerMenu();
+document.addEventListener('DOMContentLoaded', () => {
+    HamburgerMenu();
+});
+

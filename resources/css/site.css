@@ -16,6 +16,30 @@
     h2 {
       @apply md:text-[3.125rem] font-bold text-[1.75rem];
     }
+
+    .content-block p {
+        @apply leading-[36px]  md:mb-[1rem] mb-[.75rem];
+    }
+
+    .content-block h2 {
+        @apply mb-[.75rem];
+    }
+
+    .form-field input[type="text"], .form-field input[type="tel"], .form-field textarea {
+        @apply border-[#808080]/50 border rounded px-[1rem] py-[.5rem];
+    }
+
+    .form-field br {
+        @apply hidden;
+    }
+
+    .form-field-checkboxes label {
+        @apply block;
+    }
+
+    .form-field-checkboxes label input {
+        @apply mr-[.25rem];
+    }
 }
 
 
